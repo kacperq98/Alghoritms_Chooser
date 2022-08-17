@@ -1,7 +1,10 @@
 import matplotlib.pyplot as plt
 from time import sleep as sp
+from tryagain import ask
 
 """ FizzBuzz Algorithm"""
+
+
 def fizz_buzz():
     lowerRange = int(input("Type the lower boundry of the range: "))
     upperRange = int(input("Type the upper boundry of the range: "))
@@ -21,6 +24,8 @@ def fizz_buzz():
 
 
 """Check if is an anagram"""
+
+
 def is_anagram():
     word1 = input("Type first word: ")
     word2 = input("Type second word: ")
@@ -35,6 +40,8 @@ def is_anagram():
 
 
 """Check if is a palindrome"""
+
+
 def palindrome():
     while True:
 
@@ -47,6 +54,8 @@ def palindrome():
 
 
 """A countdown function"""
+
+
 def rec(n):
     print(n)
     sp(1)
@@ -58,11 +67,14 @@ def rec(n):
 
 
 """A seek a number in indicated range"""
+
+
 def sequential_seek():
     while True:
 
         borders = input(
             "Enter the lower and upper limits, separating them with a dash:")
+        print()
         borders = borders.split("-")
 
         if len(borders) != 2:
@@ -72,12 +84,13 @@ def sequential_seek():
             lowerBorder = int(borders[0])
             upperBorder = int(borders[1])
 
-            if lowerBorder >= upperBorder:
-                print("Inavlid inputs. Try again.")
+        if lowerBorder >= upperBorder:
+            print("Inavlid inputs. Try again.")
 
-            else:
-                break
+        else:
+            break
     n = int(input("Type the number to found in range:"))
+    print()
     found = False
 
     for i in range(lowerBorder, upperBorder):
@@ -94,10 +107,15 @@ def sequential_seek():
 
 
 """ An alghoritm to check a amount of letters, digits and special signs in string"""
+
+
 def count_char():
     while True:
-        phrase = input("Enter a string: ")      # Input a string and create an empty lists for signs
-        phrase = phrase.replace(" ", "")        # Delete a blank space from string
+        # Input a string and create an empty lists for signs
+        phrase = input("Enter a string: ")
+        print()
+        # Delete a blank space from string
+        phrase = phrase.replace(" ", "")
         listOfChars = []
         listOfNums = []
         listOfSpecialSigns = []
@@ -113,7 +131,8 @@ def count_char():
 
         listOfNums = sorted(listOfNums)
         listOfChars = sorted(listOfChars)
-        listOfChars = listOfChars+listOfNums+listOfSpecialSigns     # Join all list of signs 
+        listOfChars = listOfChars+listOfNums + \
+            listOfSpecialSigns     # Join all list of signs
 
         for char in listOfChars:
             if char in countDict:
@@ -134,7 +153,7 @@ def count_char():
         return True
 
 
-def plotChart(countDict):                   #draw a plot wuth use a matplotlib library
+def plotChart(countDict):  # draw a plot wuth use a matplotlib library
     x = countDict.keys()
     y = countDict.values()
 

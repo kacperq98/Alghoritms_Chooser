@@ -1,5 +1,5 @@
 from simple_algorithms import *
-from tryagain import run, ask
+from tryagain import ask
 
 import shutil
 import sys
@@ -27,30 +27,49 @@ while True:                                                # Menu to choose algh
 5 - Reccuretion Countdown,
 6 - Sequential Seek\n
 Type a number from 0 to 6: """))
+    print()
 
     match choose:
         case 0:
             print("\nGoodbye\n")
             sys.exit()
         case 1:
-            run(fizz_buzz(), ask())
+            while True:
+                count_char()
+                if ask():
+                    break
 
         case 2:
-            run(count_char(), ask())
+            while True:
+                fizz_buzz()
+                if ask():
+                    break
 
         case 3:
-            run(is_anagram(), ask())
+            while True:
+                is_anagram()
+                if ask():
+                    break
 
         case 4:
-            run(palindrome(), ask())
+            while True:
+                palindrome()
+                if ask():
+                    break
 
         case 5:
-            n = int(
-                input('Type a amout of time in seconds what you want to do countdown: '))
-            run(rec(n), ask())
+            while True:
+                n = int(
+                    input('Type a amout of time in seconds what you want to do countdown: '))
+                rec(n)
+                if ask():
+                    break
 
         case 6:
-            run(sequential_seek, ask())
+            while True:
+                sequential_seek()
+                if ask():
+                    break
 
         case other:
             print("\nIncorrect value! Try again.\n")
